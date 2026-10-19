@@ -1,0 +1,87 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px 20px;
+  position: relative;
+}
+
+.numberWrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.number {
+  font-size: 48px;
+  font-weight: 800;
+  color: #E4E0D8;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  background: #F7F5F0;
+  border: 1px solid #E4E0D8;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.card:hover .iconWrapper {
+  background: #354A35;
+  border-color: #354A35;
+}
+
+.card:hover .iconWrapper svg {
+  stroke: #FFFFFF;
+}
+
+.card:hover .iconWrapper svg circle[fill="#B8F36B"],
+.card:hover .iconWrapper svg path[fill="#B8F36B"] {
+  fill: #FFFFFF;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #20231F;
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #73766F;
+  margin: 0;
+  max-width: 280px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 20px 16px;
+  }
+  
+  .number {
+    font-size: 40px;
+  }
+  
+  .iconWrapper {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .title {
+    font-size: 20px;
+  }
+  
+  .description {
+    font-size: 15px;
+  }
+}

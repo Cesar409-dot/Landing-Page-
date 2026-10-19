@@ -1,0 +1,483 @@
+.page {
+  min-height: 100vh;
+  background: #F7F5F0;
+  color: #20231F;
+}
+
+.skipLink {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  background: #354A35;
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 8px;
+  z-index: 9999;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skipLink:focus {
+  top: 16px;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 60px;
+}
+
+.sectionTitle {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 16px 0 0;
+  letter-spacing: -0.02em;
+}
+
+.sectionDescription {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #73766F;
+  margin: 16px 0 0;
+}
+
+.highlight {
+  color: #B8F36B;
+  position: relative;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: rgba(184, 243, 107, 0.3);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 0 100px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 20% 0%, rgba(184, 243, 107, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(53, 74, 53, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.heroContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.heroContent {
+  max-width: 580px;
+}
+
+.heroTitle {
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 16px 0 0;
+  letter-spacing: -0.02em;
+}
+
+.heroDescription {
+  font-size: 20px;
+  line-height: 1.7;
+  color: #73766F;
+  margin: 24px 0 0;
+}
+
+.heroTrust {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 32px 0 0;
+  flex-wrap: wrap;
+}
+
+.trustItem {
+  font-size: 14px;
+  font-weight: 500;
+  color: #73766F;
+}
+
+.trustSeparator {
+  color: #E4E0D8;
+}
+
+.heroActions {
+  display: flex;
+  gap: 16px;
+  margin: 40px 0 0;
+  flex-wrap: wrap;
+}
+
+.heroVisual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Produto Section */
+.produtoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.produtoVisualWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.caracteristicas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.caracteristica {
+  display: flex;
+  gap: 16px;
+  padding: 24px;
+  background: #FFFFFF;
+  border: 1px solid #E4E0D8;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.caracteristica:hover {
+  border-color: #B8F36B;
+  box-shadow: 0 8px 32px rgba(32, 35, 31, 0.06);
+}
+
+.caracIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #F7F5F0;
+  border: 1px solid #E4E0D8;
+  flex-shrink: 0;
+  color: #B8F36B;
+  transition: all 0.3s ease;
+}
+
+.caracteristica:hover .caracIcon {
+  background: #354A35;
+  border-color: #354A35;
+  color: #FFFFFF;
+}
+
+.caracTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #20231F;
+  margin: 0 0 6px;
+}
+
+.caracDesc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #73766F;
+  margin: 0;
+}
+
+/* Benefícios Section */
+.beneficiosGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Experiências Section */
+.experienciasGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.experienciasVisual {
+  position: sticky;
+  top: 120px;
+}
+
+.cenarioInfo {
+  text-align: center;
+  margin-top: 24px;
+  padding: 20px;
+  background: #FFFFFF;
+  border: 1px solid #E4E0D8;
+  border-radius: 16px;
+}
+
+.cenarioBadge {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #354A35;
+  margin-bottom: 12px;
+}
+
+.cenarioDesc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #73766F;
+  margin: 0;
+}
+
+.experienciasControls {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.controlsHint {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #73766F;
+  margin: 0;
+  text-align: center;
+}
+
+/* Passos Section */
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Diferenciais Section */
+.diferenciaisGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.diferencialVisual {
+  display: flex;
+  justify-content: center;
+}
+
+.diferenciaisList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.diferencial {
+  display: flex;
+  gap: 16px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid #E4E0D8;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.diferencial:hover {
+  border-color: #B8F36B;
+  box-shadow: 0 8px 32px rgba(32, 35, 31, 0.06);
+}
+
+.diffNumber {
+  font-size: 24px;
+  font-weight: 800;
+  color: #E4E0D8;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.diferencial p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #20231F;
+  margin: 0;
+}
+
+/* Avaliações Section */
+.avaliacoesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Oferta Section */
+.ofertaSection {
+  text-align: center;
+}
+
+/* FAQ Section */
+/* Já estilizado no componente FAQ */
+
+/* CTA Final */
+.ctaFinal {
+  background: #20231F;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.ctaFinalTitle {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+}
+
+.ctaFinal .highlight::after {
+  background: rgba(184, 243, 107, 0.3);
+}
+
+.ctaFinalDescription {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.7);
+  margin: 0 0 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1024px) {
+  .beneficiosGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .avaliacoesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stepsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .produtoGrid,
+  .experienciasGrid,
+  .diferenciaisGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .experienciasVisual {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 72px 0;
+  }
+  
+  .hero {
+    padding: 120px 0 72px;
+    min-height: auto;
+  }
+  
+  .heroContainer {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .heroContent {
+    max-width: none;
+  }
+  
+  .heroTrust {
+    justify-content: center;
+  }
+  
+  .heroActions {
+    justify-content: center;
+  }
+  
+  .heroVisual {
+    order: -1;
+  }
+  
+  .beneficiosGrid,
+  .avaliacoesGrid,
+  .stepsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .caracteristicas {
+    gap: 16px;
+  }
+  
+  .caracteristica {
+    padding: 20px;
+  }
+  
+  .diferencial {
+    padding: 16px 20px;
+  }
+  
+  .ctaFinal {
+    padding: 72px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

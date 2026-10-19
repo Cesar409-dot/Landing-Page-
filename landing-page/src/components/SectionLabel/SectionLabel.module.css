@@ -1,0 +1,16 @@
+.label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #73766F;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .label {
+    font-size: 11px;
+  }
+}
