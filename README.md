@@ -57,14 +57,14 @@ O que levamos como referência:
 - CSS Modules
 - VS Code
 - Git e GitHub
-- Claude (IA generativa), detalhado na seção abaixo
+- IA generativa, detalhado na seção abaixo
 
 
 ### Uso de IA
 
 Modelo utilizado:
 
-- Claude
+- Nemotron 3.5 Lightning Free
 
 Para que o modelo foi utilizado:
 
