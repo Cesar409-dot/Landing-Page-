@@ -10,6 +10,7 @@ export function ScenarioSelector({ cenarios, cenarioSelecionado, onSelecionar })
           onClick={() => onSelecionar(cenario.id)}
           aria-pressed={cenarioSelecionado === cenario.id}
           aria-label={`Selecionar cenário ${cenario.nome}`}
+          type="button"
         >
           <span className={styles.colorDot} style={{ background: cenario.luz }} />
           <span className={styles.optionName}>{cenario.nome}</span>

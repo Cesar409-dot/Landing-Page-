@@ -83,6 +83,7 @@ export function Header({ menuAberto, onToggleMenu, onFecharMenu, onCtaClick }) {
           aria-controls="main-nav"
           aria-label={menuAberto ? 'Fechar menu' : 'Abrir menu'}
           id="main-nav"
+          type="button"
         >
           <span className={`${styles.hamburger} ${menuAberto ? styles.hamburgerOpen : ''}`} aria-hidden="true">
             <span className={styles.hamburgerLine}></span>

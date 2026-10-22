@@ -6,7 +6,11 @@ export function FAQItem({ item, aberta, onToggle }) {
   const answerId = useId();
 
   return (
-    <details className={`${styles.item} ${aberta ? styles.open : ''}`} onToggle={onToggle}>
+    <details 
+      className={`${styles.item} ${aberta ? styles.open : ''}`}
+      onToggle={onToggle}
+      open={aberta}
+    >
       <summary 
         className={styles.summary} 
         id={questionId}

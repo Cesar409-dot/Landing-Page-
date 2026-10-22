@@ -91,7 +91,7 @@
 .answerText {
   font-size: 15px;
   line-height: 1.7;
-  color: #73766F;
+  color: var(--color-text-secondary);
   margin: 0;
 }
 

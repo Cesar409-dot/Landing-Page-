@@ -52,7 +52,7 @@
   background: transparent;
   border: 1px solid #E4E0D8;
   cursor: pointer;
-  color: #73766F;
+  color: var(--color-text-secondary);
   transition: all 0.2s ease;
 }
 

@@ -71,7 +71,7 @@
   padding: 8px 12px;
   font-size: 14px;
   font-weight: 500;
-  color: #73766F;
+  color: var(--color-text-secondary);
   text-decoration: none;
   border-radius: 8px;
   transition: all 0.2s ease;

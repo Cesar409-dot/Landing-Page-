@@ -58,7 +58,7 @@
 .description {
   font-size: 16px;
   line-height: 1.65;
-  color: #73766F;
+  color: var(--color-text-secondary);
   margin: 0;
   max-width: 280px;
 }

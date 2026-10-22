@@ -15,7 +15,7 @@
   border-radius: 50px;
   font-size: 15px;
   font-weight: 600;
-  color: #73766F;
+  color: var(--color-text-secondary);
   cursor: pointer;
   transition: all 0.25s ease;
   white-space: nowrap;

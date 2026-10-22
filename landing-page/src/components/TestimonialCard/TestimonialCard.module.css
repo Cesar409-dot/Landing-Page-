@@ -62,7 +62,7 @@
 
 .authorRole {
   font-size: 13px;
-  color: #73766F;
+  color: var(--color-text-secondary);
   line-height: 1.3;
 }
 

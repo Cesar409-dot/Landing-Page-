@@ -59,13 +59,13 @@
 
 .ghost {
   background: transparent;
-  color: #73766F;
+  color: var(--color-text-secondary);
   border: none;
 }
 
 .ghost:hover:not(.disabled) {
-  color: #20231F;
-  background: #EFEBE3;
+  color: var(--color-text);
+  background: var(--color-bg-alt);
 }
 
 .sm {

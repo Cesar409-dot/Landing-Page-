@@ -26,7 +26,6 @@ export function LandingPage() {
     fecharMenu,
     cenarioSelecionado,
     selecionarCenario,
-    cenarioAtual,
     modalAberto,
     abrirModal,
     fecharModal,
