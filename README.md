@@ -55,8 +55,12 @@ O que levamos como referência:
 - React
 - Vite
 - CSS Modules
+- Arquitetura MVVM
 - VS Code
+- OpenCode
 - Git e GitHub
+- oxlint (verificação de lint)
+- MCP `pencil` (avaliado na auditoria, mas sem uso efetivo, detalhado na seção "Auditoria com MCP")
 - IA generativa, detalhado na seção abaixo
 
 
@@ -70,7 +74,8 @@ Para que o modelo foi utilizado:
 
 - Revisar a estrutura da página e conferir se a ordem das seções fazia sentido para uma landing page de conversão;
 - Interpretar a página pronta e checar se a proposta do produto ficava clara para quem lê pela primeira vez;
-- Escrever e revisar textos de apoio, como descrições de benefícios, FAQ e esta documentação.
+- Escrever e revisar textos de apoio, como descrições de benefícios, FAQ e esta documentação;
+- Apoiar a análise de código na auditoria de acessibilidade e responsividade (Atividade 02).
 
 Por que escolhemos esse modelo e em que momento ele ajudou:
 
@@ -79,7 +84,8 @@ Por que escolhemos esse modelo e em que momento ele ajudou:
 
 Quando o resultado não foi satisfatório:
 
-- As primeiras sugestões de texto vinham genéricas e com tom muito promocional, o que não combinava com a proposta calma e minimalista do produto.
+- As primeiras sugestões de texto vinham genéricas e com tom muito promocional, o que não combinava com a proposta calma e minimalista do produto;
+- Na auditoria, a IA não conseguiu testar a aplicação em execução, porque o único MCP disponível não tinha essa capacidade.
 
 Se trocamos de modelo:
 
@@ -92,6 +98,36 @@ Sugestões da IA:
 - **Descartadas:** promessas exageradas sobre o produto. Como ele é fictício, preferimos deixar explícito em vários pontos da página que preços, parcelamento e depoimentos são demonstrativos.
 
 
+### Auditoria com MCP (Atividade 02)
+
+**Objetivo:** analisar e aprimorar a landing page, usando um MCP (Model Context Protocol) para apoiar a avaliação e a validação da aplicação, com foco em acessibilidade, responsividade e funcionamento das interações.
+
+**Aspectos analisados:**
+
+- **Acessibilidade:** contraste de cores, hierarquia de títulos, HTML semântico, textos alternativos, navegação por teclado, visibilidade de foco, atributos ARIA, menu mobile, FAQ, modal e respeito à preferência por movimento reduzido;
+- **Responsividade:** layouts em desktop (1440×900), tablet (768×1024) e celular (390×844), verificando rolagem horizontal indevida, sobreposição de elementos, textos cortados, botões pequenos, cards desalinhados, imagens distorcidas, espaçamento e legibilidade;
+- **Funcionamento:** navegação entre seções, links do cabeçalho, CTAs, seleção de cenários de iluminação, atualização visual do produto, abertura e fechamento do FAQ e do modal, botão de confirmação, feedback após a confirmação e ausência de erros.
+
+**MCP utilizado:**
+
+- **Nome:** `pencil` (MCP server do pen.dev);
+- **Por que foi escolhido:** era o único MCP configurado e disponível no ambiente OpenCode;
+- **Ferramentas efetivamente utilizadas:** nenhuma. O `pencil` é voltado à interação com arquivos de design `.pen` e apps pen.dev, e não à automação de navegador, testes de acessibilidade ou auditoria de aplicações web em execução.
+
+**Limitação identificada:**
+
+Não havia no ambiente um MCP de navegador (como o Playwright MCP) nem de auditoria de acessibilidade (como o axe-core MCP). Por isso, não foi possível abrir a aplicação no navegador, navegar pelas seções, testar os controles interativos, alterar o viewport, executar verificações automatizadas de acessibilidade nem capturar screenshots.
+
+**Ação tomada:**
+
+Como não havia MCP apropriado, a análise foi feita por outros meios:
+
+1. Inspeção manual do código-fonte (React, CSS Modules e arquitetura MVVM);
+2. Execução da aplicação com `npm run dev` e `npm run preview`;
+3. Verificação de lint (`oxlint`) e de build (`vite build`);
+4. Análise estática de contraste, semântica HTML, atributos ARIA e responsividade por meio das media queries.
+
+
 ### Evolução da solução
 
 O que mudou entre a primeira ideia e a versão final:
@@ -101,6 +137,7 @@ O que mudou entre a primeira ideia e a versão final:
 - Cenários que eram apenas descritos em texto passaram a ter uma seção interativa, "Qual é o clima de hoje?", em que o visitante experimenta o conceito;
 - Avisos de produto fictício que ficavam só no rodapé passaram a aparecer também na seção interativa, nas avaliações e na oferta;
 - Ajustes responsivos para tablet e celular, incluindo menu mobile;
+- Revisão de acessibilidade, responsividade e funcionamento das interações na Atividade 02, feita por análise de código, lint e build;
 - Alterações sugeridas pela IA, como a revisão do tom dos textos.
 
 Decisões em que a dupla optou por não seguir a sugestão da IA:
@@ -110,11 +147,14 @@ Decisões em que a dupla optou por não seguir a sugestão da IA:
 
 ### Resultado final
 
-Avaliamos o resultado como uma página clara, consistente e fiel à proposta minimalista. A estrutura de conversão está completa, a interação mostra bem o conceito e a página tem cuidados de acessibilidade, como landmarks semânticos, rótulos para leitores de tela, foco visível.
+Avaliamos o resultado como uma página clara, consistente e fiel à proposta minimalista. A estrutura de conversão está completa, a interação mostra bem o conceito e a página tem cuidados de acessibilidade, como landmarks semânticos, rótulos para leitores de tela e foco visível.
+
+Na auditoria, a principal lição foi que a escolha da ferramenta importa: sem um MCP de navegador ou de acessibilidade, a validação ficou limitada à análise estática e aos comandos de lint e build, e não houve testes automatizados em tela nem screenshots.
 
 O que faríamos diferente se tivéssemos mais tempo:
 
+- Configurar um MCP de navegador (como o Playwright MCP) e um de acessibilidade (como o axe-core MCP) para testar a aplicação em execução em vários tamanhos de tela;
 - Adicionar imagens ou renderizações 3D do produto, no lugar dos elementos puramente ilustrativos;
 - Fazer testes de usabilidade com pessoas de fora da dupla;
 - Melhorar a animação de transição entre os cenários de iluminação;
-- Medir desempenho e acessibilidade com o Lighthouse e corrigir o que aparecer;
+- Medir desempenho e acessibilidade com o Lighthouse e corrigir o que aparecer.
